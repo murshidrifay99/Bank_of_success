@@ -1,0 +1,58 @@
+<div class="main-wrapper">
+    <div class="page-wrapper">
+      <div class="content">
+          <div class="row">
+              <div class="title">
+                  <h4 class="page-title">View Application</h4>
+              </div>
+              <!-- <div class="col-sm-8 col-9 text-right m-b-20">
+                  <a href="Add Appointment" [routerLink]="['/add-appointments']" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus" id="add-button"></i> Add Appointment</a>
+              </div> -->
+          </div>
+          <div class="row">
+              <div class="col-md-12" id="tablesize">
+                  <div class="table-responsive">
+                      <table class="table table-border table-striped custom-table mb-0" id="table">
+                          <thead>
+                              <tr>
+                                  <th>Id</th>
+                                  <th>Name</th>
+                                  <th>Contact</th>
+                                  <th>Aadhar</th>
+                                  <th>Address</th>
+                                  <th>Loan Type</th>
+                                  <th>Loan Amount</th>
+                                  <th>Action</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                           <tr *ngFor = "let app of data">
+                                <td>{{app.id}}</td>
+                                <td >{{app.name}}</td>
+                                <td>{{app.number}}</td>
+                                <td>{{app.aadhar}}</td>
+                                <td>{{app.address}}</td>
+                                <td>{{app.loan}}</td>
+                                <td>{{app?.loanAmount1}}{{app?.loanAmount2}}</td>
+                             
+                                  <td class="text-right"> 
+                                        <button type="submit" class="btn btn-info" routerLink="/Details/{{app.id}}" 
+                                        id="delete">Details</button>  
+                                        
+                                        <button type="submit" class="btn btn-secondary" routerLink="/Edit/{{app.id}}"
+                                         id="edit">Edit</button>
+
+                                        <button type="submit" class="btn btn-danger"  (click)="deleteData(app)"
+                                        id="delete">Delete</button>
+                                    
+                                                                  
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                      </table>
+                  </div>
+          </div>
+          </div>
+      </div>
+  </div>

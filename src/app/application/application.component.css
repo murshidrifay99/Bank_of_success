@@ -1,0 +1,51 @@
+body{
+    background-image: url(image/i1.jpg);
+    padding:25px 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    height:max-content;
+    font-family: 'Poppins, sans-serif';
+   
+}
+.container{
+    width:55%;
+    position:relative;
+    height:fit-content;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    box-shadow: 5px 0px 20px rgb(46, 46, 46), -5px 0px 20px black;  
+}
+.title{
+    margin-top: 8px;
+    font-size:33px;
+    font-weight: 600;
+    text-align:center;
+}
+
+button {
+    display: flex;
+    flex-wrap: wrap;
+    position:relative;
+    align-items: center;
+    justify-content: space-evenly;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 35px;
+    margin-left: 150px;
+    background-color: rgb(63, 196, 63);
+    border-radius: 30px;
+    border-style: none;
+    transition: all 0.2s ease;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: white
+  }
+  
+  
+  
+

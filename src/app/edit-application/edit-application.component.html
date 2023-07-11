@@ -1,0 +1,211 @@
+<body>
+    <div class="container">
+        <form [formGroup]="editForm" (ngSubmit)="update()" >
+            <div>
+                <h2 class="title">Application</h2>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3" >
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                        <input type="text" class="form-control" formControlName="name"aria-label="Sizing example input" 
+                        aria-describedby="inputGroup-sizing-sm"  >
+                    </div>
+                </div>
+                <div class="col">   
+                    <div class="input-group mb-3" >
+                        <span class="input-group-text" id="inputGroup-sizing-sm" >Contact</span>
+                        <input type="tel" placeholder="eg: 9876543210" class="form-control" formControlName="number"aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">   
+                <div class="col">   
+                    <div class="input-group mb-3" style="width: 100%;">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">E-mail</span>
+                        <input  type="email" placeholder="abc@gmail.com" class="form-control" formControlName="email"aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+                <div class="col">   
+                    <div class="input-group mb-3" style="width: 100%;">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Gender</span>
+                        <select type="text" class="form-select" formControlName="gender"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <option value="home" selected>--Select--</option>        
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+                        
+
+                <div class="input-group mb-3" >
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Nationality</span>
+                    <select type="text" class="form-select" formControlName="nationality"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <option>--Select--</option>
+                        <option>India</option>
+                        <option>America</option>
+                        <option>Australia</option>
+                        <option>Canada</option>
+                    </select>
+                </div>
+
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group mb-3" >
+                            <span class="input-group-text" id="inputGroup-sizing-sm">D.O.B.</span>
+                            <input type="date" class="form-control" formControlName="dob"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="input-group mb-3" >
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Age</span>
+                            <input type="number" class="form-control" formControlName="age"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Aadhar no</span>
+                    <input type="number" placeholder="eg:1234 1234 1234" class="form-control" formControlName="aadhar" pattern="[0-9]{12}"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Type of Loan</span>
+                        <select class="form-select" formControlName="loan"aria-label="Sizing example input" 
+                        (change)="inputfields()" aria-describedby="inputGroup-sizing-sm">         
+                            <option> Home Loan </option>
+                            <option> Personal Loan </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div *ngIf="showFields1">
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Property(sqft)</span>
+                                <input type="number" class="form-control" id="propertySqft" formControlName="propertySqft">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Builder Name</span>
+                                <input type="text" class="form-control" id="builderName" formControlName="builderName">
+                            </div>
+                        </div>
+                    </div>        
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Property Value</span>
+                                <input type="number" class="form-control" id="propertyValue" formControlName="propertyValue">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Annual Salary</span>
+                                <input type="number" class="form-control" id="annualSalary" formControlName="annualSalary">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col">                         
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Loan Amount <span> &#xF7EC; </span> </span> 
+                                <input type="text" class="form-control" id="loanAmount" formControlName="loanAmount"  pattern="[0-9]{7}">
+                            </div>
+                        </div>
+                        <div class="col">                                              
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Duration</span>
+                                <select class="form-select" id="loanDuration" formControlName="loanDuration">
+                                <option value="6" selected >6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
+                                <option value="36">36</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div *ngIf="showFields2">
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Company Name</span>
+                                <input type="text" class="form-control" id="companyname" formControlName="companyname">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Total Work Experience</span>
+                                <input type="text" class="form-control" id="experience" formControlName="experience">
+                            </div>
+                        </div>
+                    </div>        
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Annual Salary</span>
+                                <input type="text" class="form-control" id="annualSalary" formControlName="annualSalary2">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Existing EMI Ammount</span>
+                                <input type="text" class="form-control" id="emiammount" formControlName="emiamount">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col">                         
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Loan Amount <span> &#xF7EC; </span> </span> 
+                                <input type="text" class="form-control" id="loanAmount" formControlName="loanAmount2"  pattern="[0-9]{7}">
+                            </div>
+                        </div>
+                        <div class="col">                                              
+                            <div class="input-group mb-3" >
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Duration</span>
+                                <select class="form-select" id="loanDuration" formControlName="loanDuration2">
+                                <option value="6" selected >6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
+                                <option value="36">36</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Address</span>
+                    <textarea type="text" class="form-control" formControlName="address"aria-label="Sizing example input"
+                     aria-describedby="inputGroup-sizing-sm"></textarea>
+                </div>
+                
+                
+<div class="row">
+    <div class="col-md-2">
+            <button type="submit" class="btn btn-success" >Apply</button>
+    </div>
+</div>
+              
+        
+        </form>
+    </div>
+</body>

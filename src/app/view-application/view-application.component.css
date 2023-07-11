@@ -1,0 +1,10 @@
+button{
+    margin-left:8px;
+}
+.content{
+    position: absolute;
+    display: flexbox;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow-x: hidden;
+}
